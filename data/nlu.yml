@@ -1,0 +1,53 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: next
+  examples: |
+    - continue
+    - next
+
+- intent: budget
+  examples: |
+    - /[0-9]+/
+    - /[0-9]+\s*-\s*[0-9]+/
+    - /[0-9]+\s*million/
+    - /[0-9]+\s*billion/
+    - 90000000

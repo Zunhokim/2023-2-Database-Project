@@ -1,0 +1,44 @@
+version: "3.1"
+
+actions:
+  - action_get_car_list
+  - utter_greet
+  - utter_goodbye
+  - utter_budget
+  - utter_ask_budget
+
+intents:
+  - greet
+  - goodbye
+  - deny
+  - next
+  - budget
+
+responses:
+  utter_greet:
+  - text: "Hello, I'm the car recommendation chatbot"
+  
+  utter_budget:
+  - text: "Please provide your budget. Only number."
+
+  utter_goodbye:
+  - text: "Thank you for using this chatbot. Made by Jun-ho Kim."
+
+  utter_ask_budget:
+  - text: "How much budget do you have?"
+
+
+slots:
+  user_budget:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: budget
+
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
