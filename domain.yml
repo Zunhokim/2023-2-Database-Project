@@ -27,17 +27,12 @@ responses:
   utter_ask_budget:
   - text: "How much budget do you have?"
 
-
 slots:
   user_budget:
     type: float
     mappings:
       - type: from_entity
         entity: budget
-
-
-
-
 
 session_config:
   session_expiration_time: 60
