@@ -46,6 +46,7 @@ nlu:
 
 - intent: budget
   examples: |
-    - I have (budget)won.
-    - (budget) won.
-    - (budget).
+    - I have [90000000](budget)won
+    - [45000000](budget) won
+    - [30000000](budget)won
+    - My budget is [20000000](budget) won

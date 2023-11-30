@@ -1,51 +1,3 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
-
-
-# This is a simple example for a custom action which utters "Hello World!"
-
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
-
-# from rasa_sdk import Tracker
-# from rasa_sdk.events import SlotSet
-# from rasa_sdk.executor import CollectingDispatcher
-# from typing import Any, Text, Dict, List
-# from rasa_sdk import Action
-
-# class ActionSaveUserName(Action):
-
-#   def name(self) -> Text:
-#     return "action_save_user_name"
-
-#   async def run(
-#     self,
-#     dispatcher: CollectingDispatcher,
-#     tracker: Tracker,
-#     domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-#     user_name = tracker.latest_message['text']
-#     return [SlotSet("user_name", user_name)]
-
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from typing import Any, Dict, List, Text
@@ -58,9 +10,9 @@ class ActionGetCarList(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # 사용자의 예산 정보를 가져옵니다.
-        user_budget = float(tracker.get_slot("budget"))
+        user_budget = float(tracker.get_slot("user_budget"))
         if user_budget is None:
-            dispatcher.utter_message(text="예산 정보를 찾을 수 없습니다.")
+            dispatcher.utter_message(text="I can't find budget.")
             return []
 
         user_budget = float(user_budget)
@@ -105,8 +57,8 @@ class ActionGetCarList(Action):
         # 차량 목록을 챗봇으로 전송
         if car_list:
             car_list_message = "\n".join(car_list)
-            dispatcher.utter_message(text=f"예산 내의 차량 목록:\n\n{car_list_message}")
+            dispatcher.utter_message(text=f"List of cars within the budget:\n\n{car_list_message}")
         else:
-            dispatcher.utter_message(text="예산 내에 해당하는 차량이 없습니다.")
+            dispatcher.utter_message(text="There are no vehicles within the budget.")
 
         return []
