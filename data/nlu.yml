@@ -46,8 +46,6 @@ nlu:
 
 - intent: budget
   examples: |
-    - /[0-9]+/
-    - /[0-9]+\s*-\s*[0-9]+/
-    - /[0-9]+\s*million/
-    - /[0-9]+\s*billion/
-    - 90000000
+    - I have (budget)won.
+    - (budget) won.
+    - (budget).
