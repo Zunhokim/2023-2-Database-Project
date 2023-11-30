@@ -7,5 +7,7 @@ stories:
   - intent: greet 
   - action: utter_greet
   - intent: input_budget
+    entities: 
+    - budget: 300000000
   - action: action_get_car_list
   

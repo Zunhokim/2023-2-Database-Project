@@ -2,7 +2,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from typing import Any, Dict, List, Text
 from rasa_sdk.events import SlotSet
-from Decimal import decimal
+import decimal
 import mysql.connector
 
 class ActionGetCarList(Action):
@@ -16,7 +16,7 @@ class ActionGetCarList(Action):
             dispatcher.utter_message(text="I can't find budget.")
             return []
 
-        user_budget = Decimal(str(user_budget))
+        user_budget = decimal(str(user_budget))
         
         # MySQL 데이터베이스 연결 설정
         db_config = {
