@@ -12,7 +12,7 @@ intents:
   - goodbye
   - deny
   - next
-  - budget
+  - input_budget
 
 entities:
   - budget
@@ -32,7 +32,7 @@ responses:
 
 slots:
   user_budget:
-    type: float
+    type: text
     mappings:
       - type: from_entity
         entity: budget

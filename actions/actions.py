@@ -2,6 +2,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from typing import Any, Dict, List, Text
 from rasa_sdk.events import SlotSet
+from Decimal import decimal
 import mysql.connector
 
 class ActionGetCarList(Action):
@@ -10,12 +11,12 @@ class ActionGetCarList(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # 사용자의 예산 정보를 가져옵니다.
-        user_budget = float(tracker.get_slot("user_budget"))
+        user_budget = tracker.get_slot("user_budget")
         if user_budget is None:
             dispatcher.utter_message(text="I can't find budget.")
             return []
 
-        user_budget = float(user_budget)
+        user_budget = Decimal(str(user_budget))
         
         # MySQL 데이터베이스 연결 설정
         db_config = {

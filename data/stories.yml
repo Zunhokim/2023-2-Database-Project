@@ -6,6 +6,6 @@ stories:
   steps:
   - intent: greet 
   - action: utter_greet
-  - intent: budget
+  - intent: input_budget
   - action: action_get_car_list
   
