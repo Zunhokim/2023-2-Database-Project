@@ -44,7 +44,7 @@ nlu:
     - continue
     - next
 
-- intent: budget
+- intent: input_budget
   examples: |
     - I have [90000000](budget)won
     - [45000000](budget) won
