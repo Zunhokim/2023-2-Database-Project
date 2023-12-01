@@ -4,8 +4,8 @@ actions:
   - action_get_car_list
   - utter_greet
   - utter_goodbye
-  - utter_ask_budget
   - utter_car_list
+  - utter_ask_origin
 
 intents:
   - greet
@@ -20,9 +20,12 @@ entities:
 responses:
   utter_greet:
   - text: "Hello, I'm the car recommendation chatbot"
-  
-  utter_budget:
-  - text: "Please provide your budget. Only number."
+
+  utter_ask_budget:
+  - text: "How much budget do you have?"
+
+  utter_ask_origin:
+  - text: "Which type of car are you interested in? (Domestic/Foreign)"
 
   utter_goodbye:
   - text: "Thank you for using this chatbot. Made by Jun-ho Kim."

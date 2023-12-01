@@ -6,8 +6,13 @@ stories:
   steps:
   - intent: greet 
   - action: utter_greet
+  - action: utter_ask_budget
   - intent: input_budget
     entities:
     - budget: user_budget
   - action: action_get_car_list
+  - action: utter_ask_origin
   
+- story: second
+  steps:
+  - intent: origin

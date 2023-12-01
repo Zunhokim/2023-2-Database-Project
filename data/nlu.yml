@@ -39,11 +39,6 @@ nlu:
     - no way
     - not really
 
-- intent: next
-  examples: |
-    - continue
-    - next
-
 - intent: input_budget
   examples: |
     - I have [90000000](budget)won
@@ -54,3 +49,10 @@ nlu:
     - I have [50000000](budget) KRW
     - Budget: [30000000](budget) won
     - [32000000](budget)
+
+- intent: origin
+  examples: |
+    - Domestic
+    - domestic
+    - Foreign
+    - foreign
