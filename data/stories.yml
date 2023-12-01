@@ -16,3 +16,4 @@ stories:
 - story: second
   steps:
   - intent: origin
+  - action: utter_ask_car_type
