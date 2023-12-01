@@ -36,7 +36,6 @@ slots:
     mappings:
       - type: from_entity
         entity: budget
-        value: 45000000
 
 session_config:
   session_expiration_time: 60

@@ -2,7 +2,6 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from typing import Any, Dict, List, Text
 from rasa_sdk.events import SlotSet
-import decimal
 import mysql.connector
 
 class ActionGetCarList(Action):
@@ -16,7 +15,7 @@ class ActionGetCarList(Action):
             dispatcher.utter_message(text="I can't find budget.")
             return []
 
-        user_budget = decimal(str(user_budget))
+        user_budget = int(str(user_budget))
         
         # MySQL 데이터베이스 연결 설정
         db_config = {
@@ -57,9 +56,11 @@ class ActionGetCarList(Action):
 
         # 차량 목록을 챗봇으로 전송
         if car_list:
-            car_list_message = "\n".join(car_list)
-            dispatcher.utter_message(text=f"List of cars within the budget:\n\n{car_list_message}")
+            dispatcher.utter_message(
+                template="utter_car_list",
+                car_list=car_list
+            )
         else:
-            dispatcher.utter_message(text="There are no vehicles within the budget.")
-
+            dispatcher.utter_message(text="예산 내에서 구매 가능한 차량이 없습니다.")
+            
         return []
