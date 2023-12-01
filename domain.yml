@@ -4,8 +4,8 @@ actions:
   - action_get_car_list
   - utter_greet
   - utter_goodbye
-  - utter_budget
   - utter_ask_budget
+  - utter_car_list
 
 intents:
   - greet
@@ -30,10 +30,12 @@ responses:
   utter_ask_budget:
   - text: "How much budget do you have?"
 
+  utter_car_list:
+  - text: "Here are the cars within your budget:\n{car_list}"
+
 slots:
   user_budget:
     type: text
-    influence_conversation: true
     mappings:
       - type: from_entity
         entity: budget

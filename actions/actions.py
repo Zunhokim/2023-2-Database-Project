@@ -15,7 +15,7 @@ class ActionGetCarList(Action):
             dispatcher.utter_message(text="I can't find budget.")
             return []
 
-        user_budget = int(str(user_budget))
+        user_budget = int(user_budget)
         
         # MySQL 데이터베이스 연결 설정
         db_config = {
@@ -47,20 +47,18 @@ class ActionGetCarList(Action):
             price = row[5]
             fuel_type = row[6]
 
-            car_info = f"Car ID: {car_id}\nManufacturer: {manufacturer}\nOrigin: {origin}\nModel Name: {model_name}\nCar Type: {car_type}\nPrice: {price}\nFuel Type: {fuel_type}"
+            car_info = f"Manufacturer: {manufacturer} | Origin: {origin} | Model Name: {model_name} | Car Type: {car_type} | Price: {price} | Fuel Type: {fuel_type}"
             car_list.append(car_info)
 
         # 커넥션 및 커서 닫기
         cursor.close()
         conn.close()
 
-        # 차량 목록을 챗봇으로 전송
+        # 차량 목록을 바로 출력
         if car_list:
-            dispatcher.utter_message(
-                template="utter_car_list",
-                car_list=car_list
-            )
+            car_list_text = "\n".join(car_list)
+            dispatcher.utter_message(text=car_list_text)
         else:
             dispatcher.utter_message(text="예산 내에서 구매 가능한 차량이 없습니다.")
-            
+
         return []
