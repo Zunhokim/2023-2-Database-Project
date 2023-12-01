@@ -33,6 +33,7 @@ responses:
 slots:
   user_budget:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: budget
