@@ -10,7 +10,6 @@ stories:
   - intent: input_budget
     entities:
     - budget: user_budget
-  - action: action_get_car_list
   - action: utter_ask_origin
   
 - story: second
@@ -18,4 +17,8 @@ stories:
   - intent: input_origin
     entities:
     - origin: user_origin
-  - action: utter_ask_car_type
+  - action: utter_ask_brand
+  - intent: input_brand
+    entities:
+    - brand: user_brand
+  - action: action_get_car_list

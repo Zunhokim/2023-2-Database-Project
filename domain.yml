@@ -6,6 +6,7 @@ actions:
   - utter_goodbye
   - utter_ask_budget
   - utter_ask_origin
+  - utter_ask_brand
   - utter_ask_car_type
 
 intents:
@@ -30,7 +31,10 @@ responses:
   - text: "How much budget do you have?"
 
   utter_ask_origin:
-  - text: "\nWhich type of car are you interested in? (Domestic/Foreign)"
+  - text: "\n\nWhich type of car are you interested in? (Domestic/Foreign)"
+
+  utter_ask_brand:
+  - text: "\n\nWhich brand do you prefer? (Hyundai, Kia, Mercedes-Benz, Porsche, etc.)"
 
   utter_ask_car_type:
   - text: "What type of car do you prefer? (Sedan, Hatchback, SUV, Sports car, etc.)"
