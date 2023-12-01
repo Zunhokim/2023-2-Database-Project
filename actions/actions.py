@@ -73,6 +73,6 @@ class ActionGetCarList(Action):
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
         else:
-            dispatcher.utter_message(text="예산 내에서 구매 가능한 차량이 없습니다.")
+            dispatcher.utter_message(text="There are no vehicle fits the criteria.")
 
         return []
