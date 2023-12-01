@@ -5,7 +5,6 @@ actions:
   - utter_greet
   - utter_goodbye
   - utter_ask_budget
-  - utter_car_list
   - utter_ask_origin
   - utter_ask_car_type
 
@@ -15,10 +14,13 @@ intents:
   - deny
   - next
   - input_budget
-  - origin
+  - input_origin
+  - input_brand
 
 entities:
   - budget
+  - origin
+  - brand
 
 responses:
   utter_greet:
@@ -28,7 +30,7 @@ responses:
   - text: "How much budget do you have?"
 
   utter_ask_origin:
-  - text: "Which type of car are you interested in? (Domestic/Foreign)"
+  - text: "\nWhich type of car are you interested in? (Domestic/Foreign)"
 
   utter_ask_car_type:
   - text: "What type of car do you prefer? (Sedan, Hatchback, SUV, Sports car, etc.)"
@@ -36,15 +38,24 @@ responses:
   utter_goodbye:
   - text: "Thank you for using this chatbot. Made by Jun-ho Kim."
 
-  utter_car_list:
-  - text: "Here are the cars within your budget:\n{car_list}"
-
 slots:
   user_budget:
     type: text
     mappings:
       - type: from_entity
         entity: budget
+
+  user_origin:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: origin
+
+  user_brand:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: brand
 
 session_config:
   session_expiration_time: 60

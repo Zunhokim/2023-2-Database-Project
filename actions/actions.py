@@ -29,7 +29,10 @@ class ActionGetCarList(Action):
         cursor = conn.cursor()
 
         # 예산 범위에 해당하는 차량 조회를 위한 쿼리 작성
-        query = f"SELECT * FROM Car WHERE Price <= {user_budget}"
+        lower_bound = user_budget * 0.9
+        upper_bound = user_budget * 1.1
+
+        query = f"SELECT * FROM Car WHERE Price >= {lower_bound} AND Price <= {upper_bound}"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -47,7 +50,7 @@ class ActionGetCarList(Action):
             price = row[5]
             fuel_type = row[6]
 
-            car_info = f"Manufacturer: {manufacturer} | Origin: {origin} | Model Name: {model_name} | Car Type: {car_type} | Price: {price} | Fuel Type: {fuel_type}"
+            car_info = f"Brand: {manufacturer} | Origin: {origin} | Model Name: {model_name} | Car Type: {car_type} | Price: {price} | Fuel Type: {fuel_type}"
             car_list.append(car_info)
 
         # 커넥션 및 커서 닫기

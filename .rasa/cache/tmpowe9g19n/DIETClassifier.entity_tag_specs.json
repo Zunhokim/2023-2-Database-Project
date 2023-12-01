@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-brand",
+      "2": "I-brand",
+      "3": "L-brand",
+      "4": "U-brand",
+      "5": "B-budget",
+      "6": "I-budget",
+      "7": "L-budget",
+      "8": "U-budget",
+      "9": "B-origin",
+      "10": "I-origin",
+      "11": "L-origin",
+      "12": "U-origin",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-brand": 1,
+      "I-brand": 2,
+      "L-brand": 3,
+      "U-brand": 4,
+      "B-budget": 5,
+      "I-budget": 6,
+      "L-budget": 7,
+      "U-budget": 8,
+      "B-origin": 9,
+      "I-origin": 10,
+      "L-origin": 11,
+      "U-origin": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

@@ -45,14 +45,55 @@ nlu:
     - [45000000](budget) won
     - [30000000](budget)won
     - My budget is [20000000](budget) won
-    - My budget is [40000000](budget) won
     - I have [50000000](budget) KRW
     - Budget: [30000000](budget) won
     - [32000000](budget)
+    - I can spend up to [60000000](budget) won
+    - [25000000](budget) KRW is what I can afford
+    - How much can I get with [35000000](budget) won?
+    - My budget is [90000000](budget) won
+    - I can spend up to [45000000](budget) won
+    - [30000000](budget) won is my budget
+    - I have [20000000](budget) won for a car
+    - My budget range is [40000000](budget) to [50000000](budget) won
+    - I'm looking for a car under [70000000](budget) won
+    - I want to buy a car with a budget of [25000000](budget) won
+    - How much can I get with [35000000](budget) won?
+    - Can you recommend a car within a budget of [60000000](budget) won?
+    - I have saved [10000000](budget) won and need to finance the rest
+    - I'm willing to stretch my budget to [60000000](budget) won if necessary
+    - My budget is flexible, but ideally around [40000000](budget) won
+    - I have a limited budget of [15000000](budget) won
+    - What options do I have with a budget of [80000000](budget) won?
 
-- intent: origin
+- intent: input_origin
   examples: |
-    - Domestic
-    - domestic
-    - Foreign
-    - foreign
+    - I want [Domestic](origin) car
+    - I wanna buy [domestic](origin)
+    - I want to buy [Foreign](origin) car
+    - Only [foreign](origin) car I want to buy
+    - I'm looking for a [domestic](origin) vehicle
+    - Show me [foreign](origin) cars
+    - Can you recommend a [domestic](origin) car?
+    - I prefer [foreign](origin) cars
+    - [Domestic](origin) cars are my preference
+    - [domestic](origin)
+    - [Domestic](origin)
+    - [foreign](origin)
+    - [Foreign](origin)
+
+- intent: input_brand
+  examples: |
+    - I like [Kia](brand).
+    - I prefer [Hyundai](brand).
+    - Show me options from [Toyota](brand).
+    - Are there any cars from [Ford](brand)?
+    - I'm interested in [BMW](brand) vehicles.
+    - Any options from [Mercedes-Benz](brand)?
+    - I'm considering a car from [Audi](brand).
+    - Can you recommend a car brand similar to [Lexus](brand)?
+    - [Volkswagen](brand) cars catch my attention.
+    - I've heard good things about [Subaru](brand).
+    - What do you think about [Chevrolet](brand) cars?
+    - I'm a fan of [Mazda](brand) vehicles.
+    - Any options from [Nissan](brand) available?

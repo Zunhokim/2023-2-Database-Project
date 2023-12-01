@@ -15,5 +15,7 @@ stories:
   
 - story: second
   steps:
-  - intent: origin
+  - intent: input_origin
+    entities:
+    - origin: user_origin
   - action: utter_ask_car_type
