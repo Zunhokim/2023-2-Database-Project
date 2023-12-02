@@ -32,6 +32,7 @@ stories:
   - intent: input_engine
     entities:
     - engine: user_engine
+  - action: action_save_slot_values
   - action: action_get_list_all
 
 - story: no_spare_recommendation
@@ -43,3 +44,5 @@ stories:
   steps:
   - intent: agree
   - action: action_get_list_Budget_andOrigin
+  - intent: agree
+  - action: action_get_list_Budget

@@ -17,7 +17,7 @@ class SaveSlotValuesAction(Action):
         user_engine = tracker.get_slot("user_engine")
 
         # 전역 변수에 슬롯 값 저장
-        global global_budget, global_origin, global_brand, global_carType, global_engine, lower_bound, upper_bound
+        global global_budget, global_origin, global_brand, global_carType, global_engine, global_lower_bound, global_upper_bound
         global_budget = user_budget
         global_origin = user_origin
         global_brand = user_brand
@@ -26,8 +26,8 @@ class SaveSlotValuesAction(Action):
 
         # 예산 범위에 해당하는 차량 조회를 위한 전역 변수 설정
         # 예산 범위는 15% 내외로 설정.
-        lower_bound = global_budget * 0.85
-        upper_bound = global_budget * 1.15
+        global_lower_bound = int(user_budget) * 0.85
+        global_upper_bound = int(user_budget) * 1.15
 
         return []
 
@@ -36,6 +36,9 @@ class ActionGetCarList(Action):
         return "action_get_list_all"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        #전역 변수 참조 구문
+        global global_lower_bound, global_upper_bound, global_budget, global_origin, global_brand, global_carType, global_engine
+        
         # MySQL 데이터베이스 연결 설정
         db_config = {
             'user': 'root',
@@ -48,7 +51,7 @@ class ActionGetCarList(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {lower_bound} AND Price <= {upper_bound} AND Origin = '{global_origin}' AND Manufacturer LIKE '%{global_brand}%' AND CarType LIKE '{global_carType}' AND FuelType LIKE '{global_engine}'"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}' AND Manufacturer LIKE '%{global_brand}%' AND CarType LIKE '{global_carType}' AND FuelType LIKE '{global_engine}'"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -88,6 +91,9 @@ class ActionGetCarListSpare1(Action):
         return "action_get_list_Budget_andOrigin"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # 전역 변수 참조 구문
+        global global_lower_bound, global_upper_bound, global_budget, global_origin, global_brand, global_carType, global_engine
+        
         # MySQL 데이터베이스 연결 설정
         db_config = {
             'user': 'root',
@@ -100,7 +106,7 @@ class ActionGetCarListSpare1(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {lower_bound} AND Price <= {upper_bound} AND Origin = '{global_origin}'"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}'"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -132,5 +138,60 @@ class ActionGetCarListSpare1(Action):
             dispatcher.utter_message(text="\n\nShall I show you all the vehicles available within your budget range?")
         else:
             dispatcher.utter_message(text="There are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
+
+        return []
+
+class ActionGetCarListSpare2(Action):
+    def name(self) -> Text:
+        return "action_get_list_Budget"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # 전역 변수 참조 구문
+        global global_lower_bound, global_upper_bound, global_budget, global_origin, global_brand, global_carType, global_engine
+        
+        # MySQL 데이터베이스 연결 설정
+        db_config = {
+            'user': 'root',
+            'password': 'porsche-718',
+            'host': 'localhost',
+            'port': '3306',
+            'database': 'cardb'
+        }
+
+        conn = mysql.connector.connect(**db_config)
+        cursor = conn.cursor()
+
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound}'"
+
+        # 쿼리 실행
+        cursor.execute(query)
+
+        # 조회한 차량 목록을 담을 리스트 생성
+        car_list = []
+
+        # 각 차량 정보를 리스트에 추가
+        for row in cursor.fetchall():
+            car_id = row[0]
+            manufacturer = row[1]
+            origin = row[2]
+            model_name = row[3]
+            CarType = row[4]
+            price = row[5]
+            FuelType = row[6]
+
+            car_info = f"Brand: {manufacturer} | Origin: {origin} | Model Name: {model_name} | Car Type: {CarType} | Price: {price} | Fuel Type: {FuelType}"
+            car_list.append(car_info)
+
+        # 커넥션 및 커서 닫기
+        cursor.close()
+        conn.close()
+
+        # 차량 목록을 바로 출력
+        if car_list:
+            car_list_text = "\n".join(car_list)
+            dispatcher.utter_message(text=car_list_text)
+            dispatcher.utter_message(text="Thank you for using the service.")
+        else:
+            dispatcher.utter_message(text="Please check to ensure that the budget is not insufficient.")
 
         return []
