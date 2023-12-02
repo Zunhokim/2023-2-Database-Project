@@ -13,7 +13,10 @@ class ActionGetCarList(Action):
         user_budget = tracker.get_slot("user_budget")
         user_origin = tracker.get_slot("user_origin")
         user_brand = tracker.get_slot("user_brand")
+        user_carType = tracker.get_slot("user_carType")
+        user_engine = tracker.get_slot("user_engine")
 
+        # 입력 정보가 DB에 없을 경우, 조건에 맞는 차량이 없다는 메시지 출력. 
         if user_budget is None:
             dispatcher.utter_message(text="There is no vehicle that meets the criteria.")
             return []
@@ -24,9 +27,12 @@ class ActionGetCarList(Action):
             dispatcher.utter_message(text="There is no vehicle that meets the criteria.")
             return []
 
+        # 슬롯에서 가져온 입력값을 변수에 저장하기
         user_budget = int(user_budget)
         user_origin = str(user_origin).capitalize()
         user_brand = str(user_brand)
+        user_carType = str(user_carType)
+        user_engine = str(user_engine)
         
         # MySQL 데이터베이스 연결 설정
         db_config = {
@@ -36,14 +42,16 @@ class ActionGetCarList(Action):
             'port': '3306',
             'database': 'cardb'
         }
+
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
         # 예산 범위에 해당하는 차량 조회를 위한 쿼리 작성
+        # 예산 범위는 15% 내외로 설정.
         lower_bound = user_budget * 0.85
         upper_bound = user_budget * 1.15
 
-        query = f"SELECT * FROM Car WHERE Price >= {lower_bound} AND Price <= {upper_bound} AND Origin = '{user_origin}' AND cturer LIKE '%{user_brand}%'"
+        query = f"SELECT * FROM Car WHERE Price >= {lower_bound} AND Price <= {upper_bound} AND Origin = '{user_origin}' AND Manufacturer LIKE '%{user_brand}%' AND CarType LIKE = '{user_carType}' AND FuelType LIKE = '{user_engine}'"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -57,11 +65,11 @@ class ActionGetCarList(Action):
             manufacturer = row[1]
             origin = row[2]
             model_name = row[3]
-            car_type = row[4]
+            CarType = row[4]
             price = row[5]
-            fuel_type = row[6]
+            FuelType = row[6]
 
-            car_info = f"Brand: {manufacturer} | Origin: {origin} | Model Name: {model_name} | Car Type: {car_type} | Price: {price} | Fuel Type: {fuel_type}"
+            car_info = f"Brand: {manufacturer} | Origin: {origin} | Model Name: {model_name} | Car Type: {CarType} | Price: {price} | Fuel Type: {FuelType}"
             car_list.append(car_info)
 
         # 커넥션 및 커서 닫기

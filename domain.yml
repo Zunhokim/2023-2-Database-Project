@@ -7,7 +7,8 @@ actions:
   - utter_ask_budget
   - utter_ask_origin
   - utter_ask_brand
-  - utter_ask_car_type
+  - utter_ask_carType
+  - utter_ask_engine
 
 intents:
   - greet
@@ -17,11 +18,15 @@ intents:
   - input_budget
   - input_origin
   - input_brand
+  - input_carType
+  - input_engine
 
 entities:
   - budget
   - origin
   - brand
+  - carType
+  - engine
 
 responses:
   utter_greet:
@@ -31,13 +36,16 @@ responses:
   - text: "How much budget do you have?"
 
   utter_ask_origin:
-  - text: "\n\nWhich type of car are you interested in? (Domestic/Foreign)"
+  - text: "Where would you like the vehicle to be produced? (Domestic/Foreign)"
 
   utter_ask_brand:
   - text: "\n\nWhich brand do you prefer? (Hyundai, Kia, Mercedes-Benz, Porsche, etc.)"
 
-  utter_ask_car_type:
+  utter_ask_carType:
   - text: "What type of car do you prefer? (Sedan, Hatchback, SUV, Sports car, etc.)"
+
+  utter_ask_engine:
+  - text: "What type of engine do you prefer? (Gasoline, Diesel, Hybrid, etc.)"
 
   utter_goodbye:
   - text: "Thank you for using this chatbot. Made by Jun-ho Kim."
@@ -61,6 +69,18 @@ slots:
       - type: from_entity
         entity: brand
 
+  user_carType:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: carType
+  
+  user_engine:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: engine
+        
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

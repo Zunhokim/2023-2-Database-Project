@@ -55,7 +55,6 @@ nlu:
     - I can spend up to [45000000](budget) won
     - [30000000](budget) won is my budget
     - I have [20000000](budget) won for a car
-    - My budget range is [40000000](budget) to [50000000](budget) won
     - I'm looking for a car under [70000000](budget) won
     - I want to buy a car with a budget of [25000000](budget) won
     - How much can I get with [35000000](budget) won?
@@ -97,3 +96,63 @@ nlu:
     - What do you think about [Chevrolet](brand) cars?
     - I'm a fan of [Mazda](brand) vehicles.
     - Any options from [Nissan](brand) available?
+
+- intent: input_carType
+  examples: |
+    - I would like to buy a [Sedan](carType).
+    - Can you help me find a [SUV](carType) to buy?
+    - Looking for a vehicle type of [Hatchback](carType) to purchase.
+    - I'm interested in buying a [Sports Car](carType).
+    - Want to buy a [Compact SUV](carType) car.
+    - I'm considering purchasing a [Sedan](carType).
+    - Looking to buy an [SUV](carType) vehicle.
+    - Can you recommend a [Hatchback](carType) for me to buy?
+    - Thinking of buying a [Sports Car](carType).
+    - I want to buy a [Compact SUV](carType).
+    - Show me available [Sedan](carType) options.
+    - What [SUV](carType) models are available for purchase?
+    - Explore [Hatchback](carType) cars for sale.
+    - Show me [Sports Car](carType) options.
+    - Browse [Compact SUV](carType) vehicles.
+    - Compare different [Sedan](carType) models.
+    - Can you provide a comparison between [SUV](carType) options?
+    - Compare [Hatchback](carType) cars in terms of features.
+    - What are the advantages of [Sports Car](carType) compared to other cars?
+    - Compare the fuel efficiency of different [Compact SUV](carType) vehicles.
+    - Can you recommend a good [Sedan](carType) to buy?
+    - I need a recommendation for an affordable [SUV](carType).
+    - Looking for a reliable [Hatchback](carType) recommendation.
+    - Can you suggest a high-performance [Sports Car](carType)?
+    - I'm looking for a spacious [Compact SUV](carType) recommendation.
+    - Is the [Sedan](carType) model available in stock?
+    - Can you check the availability of [SUV](carType) vehicles?
+    - Are there any [Hatchback](carType) cars currently available?
+    - Is the [Sports Car](carType) model in stock?
+    - Are there any [Compact SUV](carType) vehicles available for purchase?
+
+- intent: input_engine
+  examples: |
+    - I would like to buy a car with a [Gasoline](engine) engine.
+    - Is the [Diesel](engine) engine available for purchase?
+    - Can you suggest an [Electric](engine) vehicle to buy?
+    - Are there any [Hybrid](engine) cars for sale?
+    - I prefer a car with a [Gasoline](engine) engine.
+    - Do you have any [Diesel](engine) vehicles in stock?
+    - I'm interested in buying an [Electric](engine) vehicle.
+    - What are the options for [Hybrid](engine) cars?
+    - Are there any cars with a [Gasoline](engine) engine available?
+    - Can you check if there are [Diesel](engine) vehicles in stock?
+    - Are [Electric](engine) vehicles currently available?
+    - Do you have any [Hybrid](engine) cars for sale?
+    - Are there any [Gasoline](engine) engine models in the showroom?
+    - Can you confirm the availability of [Diesel](engine) vehicles?
+    - Are [Electric](engine) cars in stock?
+    - Do you have any [Hybrid](engine) vehicles available for purchase?
+    - Can you recommend a good car with a [Gasoline](engine) engine?
+    - I'm looking for a reliable [Diesel](engine) vehicle recommendation.
+    - Can you suggest an affordable [Electric](engine) vehicle?
+    - I want a high-performance [Hybrid](engine) car recommendation.
+    - Do you have any recommendations for cars with a [Gasoline](engine) engine?
+    - I need a recommendation for a fuel-efficient [Diesel](engine) vehicle.
+    - Can you suggest a suitable [Electric](engine) car for my needs?
+    - I'm looking for a [Hybrid](engine) vehicle with good mileage.
