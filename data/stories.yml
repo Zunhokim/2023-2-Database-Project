@@ -1,7 +1,7 @@
 version: "3.1"
 
 stories:
-  
+
 - story: first
   steps:
   - intent: greet 
@@ -32,6 +32,14 @@ stories:
   - intent: input_engine
     entities:
     - engine: user_engine
-  - action: action_get_car_list
+  - action: action_get_list_all
 
-  #(13, 'Genesis', 'Domestic', 'G80', 'Sedan', 55000000, 'Gasoline'),
+- story: no_spare_recommendation
+  steps:
+  - intent: deny
+  - action: utter_goodbye
+  
+- story: spare_recommendation
+  steps:
+  - intent: agree
+  - action: action_get_list_Budget_andOrigin

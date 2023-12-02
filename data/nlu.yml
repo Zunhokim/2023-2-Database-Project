@@ -39,9 +39,27 @@ nlu:
     - no way
     - not really
 
+- intent: agree
+  examples: |
+    - ok
+    - correct
+    - yeah
+    - uh yes
+    - let's do it
+    - yeah
+    - uh yes
+    - um yes
+    - that's correct
+    - yes yes
+    - right
+    - yes
+    - yes right
+    - yes and i dont care
+    - right on
+
 - intent: input_budget
   examples: |
-    - I have [90000000](budget)won
+    - I have [90000000](budget) won
     - [45000000](budget) won
     - [30000000](budget)won
     - My budget is [20000000](budget) won
@@ -85,17 +103,17 @@ nlu:
   examples: |
     - I like [Kia](brand).
     - I prefer [Hyundai](brand).
-    - Show me options from [Toyota](brand).
+    - Show me options from [Hyundai](brand).
     - Are there any cars from [Ford](brand)?
     - I'm interested in [BMW](brand) vehicles.
     - Any options from [Mercedes-Benz](brand)?
     - I'm considering a car from [Audi](brand).
-    - Can you recommend a car brand similar to [Lexus](brand)?
+    - Can you recommend a car brand similar to [Porsche](brand)?
     - [Volkswagen](brand) cars catch my attention.
     - I've heard good things about [Subaru](brand).
     - What do you think about [Chevrolet](brand) cars?
-    - I'm a fan of [Mazda](brand) vehicles.
-    - Any options from [Nissan](brand) available?
+    - I'm a fan of [Genesis](brand) vehicles.
+    - Any options from [SsangYong](brand) available?
 
 - intent: input_carType
   examples: |

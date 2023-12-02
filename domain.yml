@@ -1,7 +1,8 @@
 version: "3.1"
 
 actions:
-  - action_get_car_list
+  - action_get_list_all
+  - action_get_list_Budget_andOrigin
   - utter_greet
   - utter_goodbye
   - utter_ask_budget
@@ -14,7 +15,7 @@ intents:
   - greet
   - goodbye
   - deny
-  - next
+  - agree
   - input_budget
   - input_origin
   - input_brand
@@ -53,34 +54,42 @@ responses:
 slots:
   user_budget:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: budget
 
   user_origin:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: origin
 
   user_brand:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: brand
 
   user_carType:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: carType
   
   user_engine:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: engine
-        
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+#(7, 'BMW', 'Foreign', '5 Series', 'Sedan', 60000000, 'Gasoline'),
+# (3, 'Genesis', 'Domestic', 'G70', 'Sedan', 45000000, 'Gasoline'),
