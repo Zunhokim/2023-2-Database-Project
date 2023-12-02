@@ -21,4 +21,17 @@ stories:
   - intent: input_brand
     entities:
     - brand: user_brand
+  - action: utter_ask_carType
+
+- story: third
+  steps:
+  - intent: input_carType
+    entities:
+    - carType: user_carType
+  - action: utter_ask_engine
+  - intent: input_engine
+    entities:
+    - engine: user_engine
   - action: action_get_car_list
+
+  #(13, 'Genesis', 'Domestic', 'G80', 'Sedan', 55000000, 'Gasoline'),
