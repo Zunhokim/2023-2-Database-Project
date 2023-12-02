@@ -51,7 +51,7 @@ class ActionGetCarList(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}' AND Manufacturer LIKE '%{global_brand}%' AND CarType LIKE '{global_carType}' AND FuelType LIKE '{global_engine}'"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}' AND Manufacturer LIKE '%{global_brand}%' AND CarType LIKE '{global_carType}' AND FuelType LIKE '{global_engine}' ORDER BY Price ASC"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -66,10 +66,10 @@ class ActionGetCarList(Action):
             origin = row[2]
             model_name = row[3]
             CarType = row[4]
-            price = row[5]
+            price = str(row[5])
             FuelType = row[6]
 
-            car_info = f"Brand: {manufacturer} | Origin: {origin} | Model Name: {model_name} | Car Type: {CarType} | Price: {price} | Fuel Type: {FuelType}"
+            car_info = "Brand: {:15s} | Origin: {:10s} | Model Name: {:20s} | Car Type: {:12s} | Price: {:12s} | Fuel Type: {:10s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
             car_list.append(car_info)
 
         # 커넥션 및 커서 닫기
@@ -80,7 +80,7 @@ class ActionGetCarList(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text="\n\nWould you like recommendations for other vehicles that meet your budget and domestic/foreign criteria?")
+            dispatcher.utter_message(text="\n \nWould you like recommendations for other vehicles that meet your budget and domestic/foreign criteria?")
         else:
             dispatcher.utter_message(text="There are no vehicle fits the criteria.\nCan I recommend vehicles that fall within your budget range and meet the domestic/foreign criteria?")
 
@@ -106,7 +106,7 @@ class ActionGetCarListSpare1(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}'"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}' ORDER BY Price ASC"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -121,11 +121,12 @@ class ActionGetCarListSpare1(Action):
             origin = row[2]
             model_name = row[3]
             CarType = row[4]
-            price = row[5]
+            price = str(row[5])
             FuelType = row[6]
 
-            car_info = f"Brand: {manufacturer} | Origin: {origin} | Model Name: {model_name} | Car Type: {CarType} | Price: {price} | Fuel Type: {FuelType}"
+            car_info = "Brand: {:15s} | Origin: {:10s} | Model Name: {:20s} | Car Type: {:12s} | Price: {:12s} | Fuel Type: {:10s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
             car_list.append(car_info)
+
 
         # 커넥션 및 커서 닫기
         cursor.close()
@@ -135,7 +136,7 @@ class ActionGetCarListSpare1(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text="\n\nShall I show you all the vehicles available within your budget range?")
+            dispatcher.utter_message(text="\n \nShall I show you all the vehicles available within your budget range?")
         else:
             dispatcher.utter_message(text="There are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
 
@@ -161,7 +162,7 @@ class ActionGetCarListSpare2(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound}"
+        query = f"SELECT * FROM Car WHERE Price <= {global_budget} ORDER BY Price ASC"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -176,10 +177,10 @@ class ActionGetCarListSpare2(Action):
             origin = row[2]
             model_name = row[3]
             CarType = row[4]
-            price = row[5]
+            price = str(row[5])
             FuelType = row[6]
 
-            car_info = f"Brand: {manufacturer} | Origin: {origin} | Model Name: {model_name} | Car Type: {CarType} | Price: {price} | Fuel Type: {FuelType}"
+            car_info = "Brand: {:15s} | Origin: {:10s} | Model Name: {:20s} | Car Type: {:12s} | Price: {:12s} | Fuel Type: {:10s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
             car_list.append(car_info)
 
         # 커넥션 및 커서 닫기
@@ -190,8 +191,7 @@ class ActionGetCarListSpare2(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text="Thank you for using the service.")
         else:
-            dispatcher.utter_message(text="Please check to ensure that the budget is not insufficient.")
+            dispatcher.utter_message(text="\n \nPlease check to ensure that the budget is not insufficient.\nIf you want to update your budget and try again, please enter \"update.\"")
 
         return []

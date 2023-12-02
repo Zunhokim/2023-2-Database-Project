@@ -53,3 +53,84 @@ Manufacturer: Kia | Origin: Domestic | Model Name: Niro Hybrid | Car Type: SUV |
 Manufacturer: Kia | Origin: Domestic | Model Name: Soul EV | Car Type: Compact SUV | Price: 38000000 | Fuel Type: Electric
 Manufacturer: SsangYong | Origin: Domestic | Model Name: Korando Hybrid | Car Type: SUV | Price: 40000000 | Fuel Type: Hybrid[0m
 [94mWhich type of car are you interested in? (Domestic/Foreign)[0m
+[94mBrand: Hyundai | Origin: Domestic | Model Name: Sonata | Car Type: Sedan | Price: 32000000 | Fuel Type: Gasoline
+Brand: Kia | Origin: Domestic | Model Name: Sportage | Car Type: SUV | Price: 35000000 | Fuel Type: Diesel
+Brand: Genesis | Origin: Domestic | Model Name: G70 | Car Type: Sedan | Price: 45000000 | Fuel Type: Gasoline
+Brand: SsangYong | Origin: Domestic | Model Name: Tivoli | Car Type: Compact SUV | Price: 27000000 | Fuel Type: Diesel
+Brand: Mercedes-Benz | Origin: Foreign | Model Name: C-Class | Car Type: Sedan | Price: 50000000 | Fuel Type: Gasoline
+Brand: Audi | Origin: Foreign | Model Name: Q3 | Car Type: SUV | Price: 48000000 | Fuel Type: Diesel
+Brand: Hyundai | Origin: Domestic | Model Name: Veloster | Car Type: Sports Car | Price: 33000000 | Fuel Type: Gasoline
+Brand: Kia | Origin: Domestic | Model Name: Seltos | Car Type: SUV | Price: 28000000 | Fuel Type: Diesel
+Brand: SsangYong | Origin: Domestic | Model Name: Rexton | Car Type: SUV | Price: 40000000 | Fuel Type: Diesel
+Brand: Audi | Origin: Foreign | Model Name: A4 | Car Type: Sedan | Price: 48000000 | Fuel Type: Diesel
+Brand: Ford | Origin: Foreign | Model Name: Focus | Car Type: Hatchback | Price: 30000000 | Fuel Type: Gasoline
+Brand: Chevrolet | Origin: Foreign | Model Name: Equinox | Car Type: SUV | Price: 45000000 | Fuel Type: Gasoline
+Brand: Hyundai | Origin: Domestic | Model Name: Ioniq Hybrid | Car Type: Hatchback | Price: 28000000 | Fuel Type: Hybrid
+Brand: Hyundai | Origin: Domestic | Model Name: Kona Electric | Car Type: SUV | Price: 45000000 | Fuel Type: Electric
+Brand: Kia | Origin: Domestic | Model Name: Niro Hybrid | Car Type: SUV | Price: 32000000 | Fuel Type: Hybrid
+Brand: Kia | Origin: Domestic | Model Name: Soul EV | Car Type: Compact SUV | Price: 38000000 | Fuel Type: Electric
+Brand: SsangYong | Origin: Domestic | Model Name: Korando Hybrid | Car Type: SUV | Price: 40000000 | Fuel Type: Hybrid[0m
+[94mBrand: Hyundai | Origin: Domestic | Model Name: Sonata | Car Type: Sedan | Price: 32000000 | Fuel Type: Gasoline
+Brand: Kia | Origin: Domestic | Model Name: Sportage | Car Type: SUV | Price: 35000000 | Fuel Type: Diesel
+Brand: SsangYong | Origin: Domestic | Model Name: Tivoli | Car Type: Compact SUV | Price: 27000000 | Fuel Type: Diesel
+Brand: Hyundai | Origin: Domestic | Model Name: Veloster | Car Type: Sports Car | Price: 33000000 | Fuel Type: Gasoline
+Brand: Kia | Origin: Domestic | Model Name: Seltos | Car Type: SUV | Price: 28000000 | Fuel Type: Diesel
+Brand: SsangYong | Origin: Domestic | Model Name: Rexton | Car Type: SUV | Price: 40000000 | Fuel Type: Diesel
+Brand: Ford | Origin: Foreign | Model Name: Focus | Car Type: Hatchback | Price: 30000000 | Fuel Type: Gasoline
+Brand: Hyundai | Origin: Domestic | Model Name: Ioniq Hybrid | Car Type: Hatchback | Price: 28000000 | Fuel Type: Hybrid
+Brand: Kia | Origin: Domestic | Model Name: Niro Hybrid | Car Type: SUV | Price: 32000000 | Fuel Type: Hybrid
+Brand: Kia | Origin: Domestic | Model Name: Soul EV | Car Type: Compact SUV | Price: 38000000 | Fuel Type: Electric
+Brand: SsangYong | Origin: Domestic | Model Name: Korando Hybrid | Car Type: SUV | Price: 40000000 | Fuel Type: Hybrid[0m
+[94mBrand: SsangYong | Origin: Domestic | Model Name: Tivoli | Car Type: Compact SUV | Price: 27000000 | Fuel Type: Diesel
+Brand: Kia | Origin: Domestic | Model Name: Seltos | Car Type: SUV | Price: 28000000 | Fuel Type: Diesel
+Brand: Hyundai | Origin: Domestic | Model Name: Ioniq Hybrid | Car Type: Hatchback | Price: 28000000 | Fuel Type: Hybrid
+Brand: Ford | Origin: Foreign | Model Name: Focus | Car Type: Hatchback | Price: 30000000 | Fuel Type: Gasoline
+Brand: Hyundai | Origin: Domestic | Model Name: Sonata | Car Type: Sedan | Price: 32000000 | Fuel Type: Gasoline
+Brand: Kia | Origin: Domestic | Model Name: Niro Hybrid | Car Type: SUV | Price: 32000000 | Fuel Type: Hybrid
+Brand: Hyundai | Origin: Domestic | Model Name: Veloster | Car Type: Sports Car | Price: 33000000 | Fuel Type: Gasoline
+Brand: Kia | Origin: Domestic | Model Name: Sportage | Car Type: SUV | Price: 35000000 | Fuel Type: Diesel
+Brand: Kia | Origin: Domestic | Model Name: Soul EV | Car Type: Compact SUV | Price: 38000000 | Fuel Type: Electric
+Brand: SsangYong | Origin: Domestic | Model Name: Rexton | Car Type: SUV | Price: 40000000 | Fuel Type: Diesel
+Brand: SsangYong | Origin: Domestic | Model Name: Korando Hybrid | Car Type: SUV | Price: 40000000 | Fuel Type: Hybrid
+Brand: Genesis | Origin: Domestic | Model Name: G70 | Car Type: Sedan | Price: 45000000 | Fuel Type: Gasoline
+Brand: Chevrolet | Origin: Foreign | Model Name: Equinox | Car Type: SUV | Price: 45000000 | Fuel Type: Gasoline
+Brand: Hyundai | Origin: Domestic | Model Name: Kona Electric | Car Type: SUV | Price: 45000000 | Fuel Type: Electric
+Brand: Audi | Origin: Foreign | Model Name: Q3 | Car Type: SUV | Price: 48000000 | Fuel Type: Diesel
+Brand: Audi | Origin: Foreign | Model Name: A4 | Car Type: Sedan | Price: 48000000 | Fuel Type: Diesel
+Brand: Mercedes-Benz | Origin: Foreign | Model Name: C-Class | Car Type: Sedan | Price: 50000000 | Fuel Type: Gasoline[0m
+[94mBrand: SsangYong 	| Origin: Domestic 	| Model Name: Tivoli 	| Car Type: Compact SUV 	| Price: 27000000 	| Fuel Type: Diesel
+Brand: Kia 	| Origin: Domestic 	| Model Name: Seltos 	| Car Type: SUV 	| Price: 28000000 	| Fuel Type: Diesel
+Brand: Hyundai 	| Origin: Domestic 	| Model Name: Ioniq Hybrid 	| Car Type: Hatchback 	| Price: 28000000 	| Fuel Type: Hybrid
+Brand: Ford 	| Origin: Foreign 	| Model Name: Focus 	| Car Type: Hatchback 	| Price: 30000000 	| Fuel Type: Gasoline
+Brand: Hyundai 	| Origin: Domestic 	| Model Name: Sonata 	| Car Type: Sedan 	| Price: 32000000 	| Fuel Type: Gasoline
+Brand: Kia 	| Origin: Domestic 	| Model Name: Niro Hybrid 	| Car Type: SUV 	| Price: 32000000 	| Fuel Type: Hybrid
+Brand: Hyundai 	| Origin: Domestic 	| Model Name: Veloster 	| Car Type: Sports Car 	| Price: 33000000 	| Fuel Type: Gasoline
+Brand: Kia 	| Origin: Domestic 	| Model Name: Sportage 	| Car Type: SUV 	| Price: 35000000 	| Fuel Type: Diesel
+Brand: Kia 	| Origin: Domestic 	| Model Name: Soul EV 	| Car Type: Compact SUV 	| Price: 38000000 	| Fuel Type: Electric
+Brand: SsangYong 	| Origin: Domestic 	| Model Name: Rexton 	| Car Type: SUV 	| Price: 40000000 	| Fuel Type: Diesel
+Brand: SsangYong 	| Origin: Domestic 	| Model Name: Korando Hybrid 	| Car Type: SUV 	| Price: 40000000 	| Fuel Type: Hybrid
+Brand: Genesis 	| Origin: Domestic 	| Model Name: G70 	| Car Type: Sedan 	| Price: 45000000 	| Fuel Type: Gasoline
+Brand: Chevrolet 	| Origin: Foreign 	| Model Name: Equinox 	| Car Type: SUV 	| Price: 45000000 	| Fuel Type: Gasoline
+Brand: Hyundai 	| Origin: Domestic 	| Model Name: Kona Electric 	| Car Type: SUV 	| Price: 45000000 	| Fuel Type: Electric
+Brand: Audi 	| Origin: Foreign 	| Model Name: Q3 	| Car Type: SUV 	| Price: 48000000 	| Fuel Type: Diesel
+Brand: Audi 	| Origin: Foreign 	| Model Name: A4 	| Car Type: Sedan 	| Price: 48000000 	| Fuel Type: Diesel
+Brand: Mercedes-Benz 	| Origin: Foreign 	| Model Name: C-Class 	| Car Type: Sedan 	| Price: 50000000 	| Fuel Type: Gasoline[0m
+[94mBrand: SsangYong       | Origin: Domestic   | Model Name: Tivoli               | Car Type: Compact SUV  | Price: 27000000     | Fuel Type: Diesel    
+Brand: Kia             | Origin: Domestic   | Model Name: Seltos               | Car Type: SUV          | Price: 28000000     | Fuel Type: Diesel    
+Brand: Hyundai         | Origin: Domestic   | Model Name: Ioniq Hybrid         | Car Type: Hatchback    | Price: 28000000     | Fuel Type: Hybrid    
+Brand: Ford            | Origin: Foreign    | Model Name: Focus                | Car Type: Hatchback    | Price: 30000000     | Fuel Type: Gasoline  
+Brand: Hyundai         | Origin: Domestic   | Model Name: Sonata               | Car Type: Sedan        | Price: 32000000     | Fuel Type: Gasoline  
+Brand: Kia             | Origin: Domestic   | Model Name: Niro Hybrid          | Car Type: SUV          | Price: 32000000     | Fuel Type: Hybrid    
+Brand: Hyundai         | Origin: Domestic   | Model Name: Veloster             | Car Type: Sports Car   | Price: 33000000     | Fuel Type: Gasoline  
+Brand: Kia             | Origin: Domestic   | Model Name: Sportage             | Car Type: SUV          | Price: 35000000     | Fuel Type: Diesel    
+Brand: Kia             | Origin: Domestic   | Model Name: Soul EV              | Car Type: Compact SUV  | Price: 38000000     | Fuel Type: Electric  
+Brand: SsangYong       | Origin: Domestic   | Model Name: Rexton               | Car Type: SUV          | Price: 40000000     | Fuel Type: Diesel    
+Brand: SsangYong       | Origin: Domestic   | Model Name: Korando Hybrid       | Car Type: SUV          | Price: 40000000     | Fuel Type: Hybrid    
+Brand: Genesis         | Origin: Domestic   | Model Name: G70                  | Car Type: Sedan        | Price: 45000000     | Fuel Type: Gasoline  
+Brand: Chevrolet       | Origin: Foreign    | Model Name: Equinox              | Car Type: SUV          | Price: 45000000     | Fuel Type: Gasoline  
+Brand: Hyundai         | Origin: Domestic   | Model Name: Kona Electric        | Car Type: SUV          | Price: 45000000     | Fuel Type: Electric  
+Brand: Audi            | Origin: Foreign    | Model Name: Q3                   | Car Type: SUV          | Price: 48000000     | Fuel Type: Diesel    
+Brand: Audi            | Origin: Foreign    | Model Name: A4                   | Car Type: Sedan        | Price: 48000000     | Fuel Type: Diesel    
+Brand: Mercedes-Benz   | Origin: Foreign    | Model Name: C-Class              | Car Type: Sedan        | Price: 50000000     | Fuel Type: Gasoline[0m
+[94mThank you for using chatbot.
+If you want to shut down chatbot, plz type "/stop"[0m

@@ -18,6 +18,7 @@ intents:
   - goodbye
   - deny
   - agree
+  - update
   - input_budget
   - input_origin
   - input_brand
@@ -39,24 +40,24 @@ responses:
   - text: "How much budget do you have?"
 
   utter_ask_origin:
-  - text: "Where would you like the vehicle to be produced? (Domestic/Foreign)"
+  - text: "Where would you like the vehicle to be produced?\nProvide options : Domestic/Foreign"
 
   utter_ask_brand:
-  - text: "\n\nWhich brand do you prefer? (Hyundai, Kia, Mercedes-Benz, Porsche, etc.)"
+  - text: "Which brand do you prefer? (Hyundai, Kia, Mercedes-Benz, Porsche, etc.)"
 
   utter_ask_carType:
   - text: "What type of car do you prefer? (Sedan, Hatchback, SUV, Sports car, etc.)"
 
   utter_ask_engine:
-  - text: "What type of engine do you prefer? (Gasoline, Diesel, Hybrid, etc.)"
+  - text: "What type of engine do you prefer?\nProvide options: Gasoline / Diesel / Hybrid / Electric"
 
   utter_goodbye:
-  - text: "Thank you for using this chatbot. Made by Jun-ho Kim."
+  - text: "Thank you for using chatbot.\nIf you want to shut down chatbot, plz type \"/stop\""
 
 slots:
   user_budget:
     type: text
-    influence_conversation: true
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: budget
@@ -92,6 +93,3 @@ slots:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
-#(7, 'BMW', 'Foreign', '5 Series', 'Sedan', 60000000, 'Gasoline'),
-# (3, 'Genesis', 'Domestic', 'G70', 'Sedan', 45000000, 'Gasoline'),

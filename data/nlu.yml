@@ -57,6 +57,17 @@ nlu:
     - yes and i dont care
     - right on
 
+- intent: update
+  examples: |
+    - update
+    - I'll update it.
+    - I'll upgrade it.
+    - Okay, I will update my budget.
+    - I want to update budget.
+    - I wanna update budget.
+    - Can I update my budget?
+    - update budget
+
 - intent: input_budget
   examples: |
     - I have [90000000](budget) won

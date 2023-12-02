@@ -34,11 +34,6 @@ stories:
     - engine: user_engine
   - action: action_save_slot_values
   - action: action_get_list_all
-
-- story: no_spare_recommendation
-  steps:
-  - intent: deny
-  - action: utter_goodbye
   
 - story: spare_recommendation
   steps:
@@ -46,3 +41,15 @@ stories:
   - action: action_get_list_Budget_andOrigin
   - intent: agree
   - action: action_get_list_Budget
+  - action: utter_goodbye
+
+- story: budget_update
+  steps:
+  - intent: update
+  - action: utter_ask_budget
+  - intent: input_budget
+    entities:
+    - budget: user_budget
+  - action: action_save_slot_values
+  - action: action_get_list_Budget
+  - action: utter_goodbye

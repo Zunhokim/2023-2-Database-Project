@@ -6,3 +6,8 @@ rules:
   steps:
   - intent: goodbye
   - action: utter_goodbye
+
+- rule: If deny anytime the user want to stop services
+  steps: 
+  - intent: deny
+  - action: utter_goodbye
