@@ -161,7 +161,7 @@ class ActionGetCarListSpare2(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound}'"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound}"
 
         # 쿼리 실행
         cursor.execute(query)
