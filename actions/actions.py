@@ -171,8 +171,10 @@ class ActionGetCarListSpare2(Action):
         # 조회한 차량 목록을 담을 리스트 생성
         car_list = []
 
-        # 각 차량 정보를 리스트에 추가
-        for row in random.sample(cursor.fetchall(), k = 10):
+        # 각 차량 정보를 리스트에 추가 (최대 10개 항목)
+        result_set = cursor.fetchall()
+        random_sample = random.sample(result_set, min(len(result_set), 10))
+        for row in random_sample:
             car_id = row[0]
             manufacturer = row[1]
             origin = row[2]
