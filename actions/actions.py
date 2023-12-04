@@ -70,7 +70,7 @@ class ActionGetCarList(Action):
             price = str(row[5])
             FuelType = row[6]
 
-            car_info = "Brand: {:15s} | Origin: {:10s} | Model Name: {:20s} | Car Type: {:12s} | Price: {:12s} | Fuel Type: {:10s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
+            car_info = "Brand: {:15s} | Origin: {:15s} | Model Name: {:20s} | Car Type: {:15s} | Price: {:15s} | Fuel Type: {:15s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
             car_list.append(car_info)
 
         # 커넥션 및 커서 닫기
@@ -125,7 +125,7 @@ class ActionGetCarListSpare1(Action):
             price = str(row[5])
             FuelType = row[6]
 
-            car_info = "Brand: {:15s} | Origin: {:10s} | Model Name: {:20s} | Car Type: {:12s} | Price: {:12s} | Fuel Type: {:10s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
+            car_info = "Brand: {:15s} | Origin: {:15s} | Model Name: {:20s} | Car Type: {:15s} | Price: {:15s} | Fuel Type: {:15s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
             car_list.append(car_info)
 
 
@@ -181,7 +181,7 @@ class ActionGetCarListSpare2(Action):
             price = str(row[5])
             FuelType = row[6]
 
-            car_info = "Brand: {:15s} | Origin: {:10s} | Model Name: {:20s} | Car Type: {:12s} | Price: {:12s} | Fuel Type: {:10s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
+            car_info = "Brand: {:15s} | Origin: {:15s} | Model Name: {:20s} | Car Type: {:15s} | Price: {:15s} | Fuel Type: {:15s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
             car_list.append(car_info)
 
         # 커넥션 및 커서 닫기
