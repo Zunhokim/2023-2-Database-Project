@@ -3,6 +3,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from typing import Any, Dict, List, Text
 from rasa_sdk.events import SlotSet
 import mysql.connector
+import random
 
 class SaveSlotValuesAction(Action):
     def name(self) -> Text:
@@ -51,7 +52,7 @@ class ActionGetCarList(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}' AND Manufacturer LIKE '%{global_brand}%' AND CarType LIKE '{global_carType}' AND FuelType LIKE '{global_engine}' ORDER BY Price ASC"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}' AND Manufacturer LIKE '%{global_brand}%' AND CarType LIKE '{global_carType}' AND FuelType LIKE '{global_engine}' ORDER BY Manufacturer ASC, Price ASC"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -106,7 +107,7 @@ class ActionGetCarListSpare1(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}' ORDER BY Price ASC"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}' ORDER BY Manufacturer ASC, Price ASC"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -162,7 +163,7 @@ class ActionGetCarListSpare2(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price <= {global_budget} ORDER BY Price ASC"
+        query = f"SELECT * FROM Car WHERE Price <= {global_budget} ORDER BY Manufacturer ASC, Price ASC"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -171,7 +172,7 @@ class ActionGetCarListSpare2(Action):
         car_list = []
 
         # 각 차량 정보를 리스트에 추가
-        for row in cursor.fetchall():
+        for row in random.sample(cursor.fetchall(), k = 10):
             car_id = row[0]
             manufacturer = row[1]
             origin = row[2]
@@ -192,6 +193,6 @@ class ActionGetCarListSpare2(Action):
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
         else:
-            dispatcher.utter_message(text="\n \nPlease check to ensure that the budget is not insufficient.\nIf you want to update your budget and try again, please enter \"update.\"")
+            dispatcher.utter_message(text="\n \nPlease check to ensure that the budget is not insufficient.\n")
 
         return []

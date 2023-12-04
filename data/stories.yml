@@ -41,7 +41,6 @@ stories:
   - action: action_get_list_Budget_andOrigin
   - intent: agree
   - action: action_get_list_Budget
-  - action: utter_goodbye
 
 - story: budget_update
   steps:
@@ -52,4 +51,3 @@ stories:
     - budget: user_budget
   - action: action_save_slot_values
   - action: action_get_list_Budget
-  - action: utter_goodbye

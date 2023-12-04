@@ -84,7 +84,6 @@ nlu:
     - I can spend up to [45000000](budget) won
     - [30000000](budget) won is my budget
     - I have [20000000](budget) won for a car
-    - I'm looking for a car under [70000000](budget) won
     - I want to buy a car with a budget of [25000000](budget) won
     - How much can I get with [35000000](budget) won?
     - Can you recommend a car within a budget of [60000000](budget) won?
@@ -120,11 +119,12 @@ nlu:
     - Any options from [Mercedes-Benz](brand)?
     - I'm considering a car from [Audi](brand).
     - Can you recommend a car brand similar to [Porsche](brand)?
-    - [Volkswagen](brand) cars catch my attention.
-    - I've heard good things about [Subaru](brand).
+    - [Ferrari](brand) cars catch my attention.
+    - I've heard good things about [Lamborghini](brand).
     - What do you think about [Chevrolet](brand) cars?
     - I'm a fan of [Genesis](brand) vehicles.
     - Any options from [SsangYong](brand) available?
+
 
 - intent: input_carType
   examples: |
@@ -157,7 +157,7 @@ nlu:
     - Can you check the availability of [SUV](carType) vehicles?
     - Are there any [Hatchback](carType) cars currently available?
     - Is the [Sports Car](carType) model in stock?
-    - Are there any [Compact SUV](carType) vehicles available for purchase?
+    - Are there any [Compact](carType) vehicles available for purchase?
 
 - intent: input_engine
   examples: |

@@ -37,7 +37,7 @@ responses:
   - text: "Hello, I'm the car recommendation chatbot"
 
   utter_ask_budget:
-  - text: "How much budget do you have?"
+  - text: "How much budget do you have?\nThe budget range will be automatically set within approximately 15% of the entered value."
 
   utter_ask_origin:
   - text: "Where would you like the vehicle to be produced?\nProvide options : Domestic/Foreign"
@@ -51,8 +51,11 @@ responses:
   utter_ask_engine:
   - text: "What type of engine do you prefer?\nProvide options: Gasoline / Diesel / Hybrid / Electric"
 
+  utter_ask_update:
+  - text: "If you want to update your budget and try again, please enter \"update.\""
+
   utter_goodbye:
-  - text: "Thank you for using chatbot.\nIf you want to shut down chatbot, plz type \"/stop\""
+  - text: "Thank you for using chatbot.\nIf you want to shut down chatbot, please type \"/stop\""
 
 slots:
   user_budget:
