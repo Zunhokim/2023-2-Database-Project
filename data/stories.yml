@@ -38,7 +38,9 @@ stories:
 - story: spare_recommendation
   steps:
   - intent: agree
-  - action: action_get_list_Budget_andOrigin
+  - action: action_get_list_budgetOriginCartype
+  - intent: agree
+  - action: action_get_list_budgetOrigin
   - intent: agree
   - action: action_get_list_Budget
 

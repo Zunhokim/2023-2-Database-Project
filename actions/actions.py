@@ -52,7 +52,7 @@ class ActionGetCarList(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}' AND Manufacturer LIKE '%{global_brand}%' AND CarType LIKE '{global_carType}' AND FuelType LIKE '{global_engine}' ORDER BY Manufacturer ASC, Price ASC"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND LOWER(Origin) = LOWER('%{global_origin}%') AND LOWER(Manufacturer) LIKE LOWER('%{global_brand}%') AND CarType LIKE '%{global_carType}%' AND LOWER(FuelType) LIKE LOWER('%{global_engine}%') ORDER BY Manufacturer ASC, Price ASC"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -81,15 +81,15 @@ class ActionGetCarList(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text="\n \nWould you like recommendations for other vehicles that meet your budget and domestic/foreign criteria?")
+            dispatcher.utter_message(text="\n \nWould you like a list based on budget range, distinguishing between domestic and foreign models, taking into consideration your preferred vehicle types?")
         else:
-            dispatcher.utter_message(text="There are no vehicle fits the criteria.\nCan I recommend vehicles that fall within your budget range and meet the domestic/foreign criteria?")
+            dispatcher.utter_message(text="There are no vehicle fits the criteria.\nWould you like a list based on budget range, distinguishing between domestic and foreign models, taking into consideration your preferred vehicle types?")
 
         return []
 
 class ActionGetCarListSpare1(Action):
     def name(self) -> Text:
-        return "action_get_list_Budget_andOrigin"
+        return "action_get_list_budgetOriginCartype"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # 전역 변수 참조 구문
@@ -107,7 +107,63 @@ class ActionGetCarListSpare1(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '{global_origin}' ORDER BY Manufacturer ASC, Price ASC"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND LOWER(Origin) = LOWER('{global_origin}') AND LOWER(CarType) LIKE LOWER('%{global_carType}%') ORDER BY Manufacturer ASC, Price ASC"
+
+        # 쿼리 실행
+        cursor.execute(query)
+
+        # 조회한 차량 목록을 담을 리스트 생성
+        car_list = []
+
+        # 각 차량 정보를 리스트에 추가
+        for row in cursor.fetchall():
+            car_id = row[0]
+            manufacturer = row[1]
+            origin = row[2]
+            model_name = row[3]
+            CarType = row[4]
+            price = str(row[5])
+            FuelType = row[6]
+
+            car_info = "Brand: {:15s} | Origin: {:15s} | Model Name: {:20s} | Car Type: {:15s} | Price: {:15s} | Fuel Type: {:15s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
+            car_list.append(car_info)
+
+
+        # 커넥션 및 커서 닫기
+        cursor.close()
+        conn.close()
+
+        # 차량 목록을 바로 출력
+        if car_list:
+            car_list_text = "\n".join(car_list)
+            dispatcher.utter_message(text=car_list_text)
+            dispatcher.utter_message(text="\n \nWould you like recommendations for other vehicles that meet your budget and domestic/foreign criteria?")
+        else:
+            dispatcher.utter_message(text="There are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
+
+        return []
+
+class ActionGetCarListSpare2(Action):
+    def name(self) -> Text:
+        return "action_get_list_budgetOrigin"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # 전역 변수 참조 구문
+        global global_lower_bound, global_upper_bound, global_budget, global_origin, global_brand, global_carType, global_engine
+        
+        # MySQL 데이터베이스 연결 설정
+        db_config = {
+            'user': 'root',
+            'password': 'porsche-718',
+            'host': 'localhost',
+            'port': '3306',
+            'database': 'cardb'
+        }
+
+        conn = mysql.connector.connect(**db_config)
+        cursor = conn.cursor()
+
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND LOWER(Origin) = LOWER('{global_origin}') ORDER BY Manufacturer ASC, Price ASC"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -143,7 +199,7 @@ class ActionGetCarListSpare1(Action):
 
         return []
 
-class ActionGetCarListSpare2(Action):
+class ActionGetCarListSpare3(Action):
     def name(self) -> Text:
         return "action_get_list_Budget"
 
@@ -194,6 +250,7 @@ class ActionGetCarListSpare2(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
+            dispatcher.utter_message(text="_\nAll service algorithms have been executed. If you'd like to start from the beginning, please enter \"hi\".")
         else:
             dispatcher.utter_message(text="\n \nPlease check to ensure that the budget is not insufficient.\n")
 

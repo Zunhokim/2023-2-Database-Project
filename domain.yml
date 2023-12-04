@@ -3,7 +3,8 @@ version: "3.1"
 actions:
   - action_save_slot_values
   - action_get_list_all
-  - action_get_list_Budget_andOrigin
+  - action_get_list_budgetOriginCartype
+  - action_get_list_budgetOrigin
   - action_get_list_Budget
   - utter_greet
   - utter_goodbye
