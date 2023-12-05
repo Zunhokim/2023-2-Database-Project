@@ -13,6 +13,7 @@ actions:
   - utter_ask_brand
   - utter_ask_carType
   - utter_ask_engine
+  - utter_help
 
 intents:
   - greet
@@ -20,6 +21,9 @@ intents:
   - deny
   - agree
   - update
+  - continue
+  - help
+  - feeling
   - input_budget
   - input_origin
   - input_brand
@@ -35,10 +39,10 @@ entities:
 
 responses:
   utter_greet:
-  - text: "Hello, I'm the car recommendation chatbot"
+  - text: "Hello, I'm the car recommendation chatbot! How are you?"
 
   utter_ask_budget:
-  - text: "How much budget do you have?\nThe budget range will be automatically set within approximately 15% of the entered value."
+  - text: "Oh, I see.\nHow much budget do you have?\nThe budget range will be automatically set within approximately 15% of the entered value."
 
   utter_ask_origin:
   - text: "Where would you like the vehicle to be produced?\nProvide options : Domestic/Foreign"
@@ -57,6 +61,9 @@ responses:
 
   utter_goodbye:
   - text: "Thank you for using chatbot.\nIf you want to shut down chatbot, please type \"/stop\""
+
+  utter_help:
+  - text: "I am a car recommendation chatbot. Please follow the instructions and enter the values as guided. Only the budget area supports updates.\nIf you want to update the budget, simply input \"update.\"\nIf you want to start the bot from the beginning, just greet the bot!"
 
 slots:
   user_budget:

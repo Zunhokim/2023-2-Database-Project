@@ -57,6 +57,34 @@ nlu:
     - yes and i dont care
     - right on
 
+
+- intent: continue
+  examples: |
+    - go on
+    - keep going
+    - proceed
+    - continue
+    - carry on
+    - please continue
+    - go ahead
+    - continue talking
+    - go on with it
+    - yes, continue
+
+- intent: feeling
+  examples: |
+    - I'm good
+    - Doing well, thank you
+    - I'm fine
+    - Pretty good
+    - Not bad
+    - I'm okay
+    - All good
+    - I'm doing well
+    - Fine, thanks
+    - I'm well, how about you?
+
+
 - intent: update
   examples: |
     - update
@@ -67,6 +95,20 @@ nlu:
     - I wanna update budget.
     - Can I update my budget?
     - update budget
+
+- intent: help
+  examples: |
+    - Help me
+    - Can you provide assistance?
+    - I need help
+    - Help, please
+    - Can you guide me?
+    - I'm confused, help
+    - Assist me
+    - I require assistance
+    - Help needed
+    - Can you help me out?
+
 
 - intent: input_budget
   examples: |

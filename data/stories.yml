@@ -6,6 +6,7 @@ stories:
   steps:
   - intent: greet 
   - action: utter_greet
+  - intent: feeling
   - action: utter_ask_budget
   - intent: input_budget
     entities:
@@ -37,7 +38,7 @@ stories:
   
 - story: spare_recommendation
   steps:
-  - intent: agree
+  - intent: continue
   - action: action_get_list_budgetOriginCartype
   - intent: agree
   - action: action_get_list_budgetOrigin

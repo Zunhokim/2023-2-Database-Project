@@ -32,6 +32,11 @@ class SaveSlotValuesAction(Action):
 
         return []
 
+
+
+
+
+
 class ActionGetCarList(Action):
     def name(self) -> Text:
         return "action_get_list_all"
@@ -52,7 +57,7 @@ class ActionGetCarList(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND LOWER(Origin) = LOWER('%{global_origin}%') AND LOWER(Manufacturer) LIKE LOWER('%{global_brand}%') AND CarType LIKE '%{global_carType}%' AND LOWER(FuelType) LIKE LOWER('%{global_engine}%') ORDER BY Manufacturer ASC, Price ASC"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin LIKE '%{global_origin}%' AND Manufacturer LIKE '%{global_brand}%' AND CarType LIKE '%{global_carType}%' AND FuelType LIKE '%{global_engine}%' ORDER BY Manufacturer ASC, Price ASC"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -81,11 +86,16 @@ class ActionGetCarList(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text="\n \nWould you like a list based on budget range, distinguishing between domestic and foreign models, taking into consideration your preferred vehicle types?")
+            dispatcher.utter_message(text="\n \nWould you like a list based on budget range, distinguishing between domestic and foreign models, taking into consideration your preferred vehicle types?\nIf you want, type \"Continue\"")
         else:
-            dispatcher.utter_message(text="There are no vehicle fits the criteria.\nWould you like a list based on budget range, distinguishing between domestic and foreign models, taking into consideration your preferred vehicle types?")
+            dispatcher.utter_message(text="There are no vehicle fits the criteria.\nWould you like a list based on budget range, distinguishing between domestic and foreign models, taking into consideration your preferred vehicle types?\nIf you want, type \"Continue\"")
 
         return []
+
+
+
+
+
 
 class ActionGetCarListSpare1(Action):
     def name(self) -> Text:
@@ -115,8 +125,10 @@ class ActionGetCarListSpare1(Action):
         # 조회한 차량 목록을 담을 리스트 생성
         car_list = []
 
-        # 각 차량 정보를 리스트에 추가
-        for row in cursor.fetchall():
+        # 각 차량 정보를 리스트에 추가  (최대 5개)       
+        result_set = cursor.fetchall()
+        random_sample = random.sample(result_set, min(len(result_set), 5))
+        for row in random_sample:
             car_id = row[0]
             manufacturer = row[1]
             origin = row[2]
@@ -142,6 +154,11 @@ class ActionGetCarListSpare1(Action):
             dispatcher.utter_message(text="There are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
 
         return []
+
+
+
+
+
 
 class ActionGetCarListSpare2(Action):
     def name(self) -> Text:
@@ -171,8 +188,10 @@ class ActionGetCarListSpare2(Action):
         # 조회한 차량 목록을 담을 리스트 생성
         car_list = []
 
-        # 각 차량 정보를 리스트에 추가
-        for row in cursor.fetchall():
+        # 각 차량 정보를 리스트에 추가 (최대 7개)
+        result_set = cursor.fetchall()
+        random_sample = random.sample(result_set, min(len(result_set), 7))
+        for row in random_sample:
             car_id = row[0]
             manufacturer = row[1]
             origin = row[2]
@@ -193,11 +212,16 @@ class ActionGetCarListSpare2(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text="\n \nShall I show you all the vehicles available within your budget range?")
+            dispatcher.utter_message(text=" \n \nShall I show you all the vehicles available within your budget range?")
         else:
             dispatcher.utter_message(text="There are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
 
         return []
+
+
+
+
+
 
 class ActionGetCarListSpare3(Action):
     def name(self) -> Text:

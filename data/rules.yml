@@ -11,3 +11,8 @@ rules:
   steps: 
   - intent: deny
   - action: utter_goodbye
+
+- rule: If user want to guide line
+  steps: 
+  - intent: help
+  - action: utter_help
