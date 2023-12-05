@@ -117,7 +117,7 @@ class ActionGetCarListSpare1(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND LOWER(Origin) = LOWER('{global_origin}') AND LOWER(CarType) LIKE LOWER('%{global_carType}%') ORDER BY Manufacturer ASC, Price ASC"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '%{global_origin}%' AND CarType LIKE '%{global_carType}%' ORDER BY Manufacturer ASC, Price ASC"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -180,7 +180,7 @@ class ActionGetCarListSpare2(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND LOWER(Origin) = LOWER('{global_origin}') ORDER BY Manufacturer ASC, Price ASC"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin = '%{global_origin}%' ORDER BY Manufacturer ASC, Price ASC"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -212,7 +212,7 @@ class ActionGetCarListSpare2(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text=" \n \nShall I show you all the vehicles available within your budget range?")
+            dispatcher.utter_message(text=" \n \n Shall I show you all the vehicles available within your budget range?")
         else:
             dispatcher.utter_message(text="There are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
 

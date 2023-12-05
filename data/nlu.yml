@@ -38,12 +38,25 @@ nlu:
     - don't like that
     - no way
     - not really
+    - I disagree
+    - I'm not interested
+    - I'd rather not
+    - I can't
+    - I won't
+    - I refuse
+    - I'm not comfortable with that
+    - It's not for me
+    - I'm saying no
+    - Absolutely not
+    - That's not happening
+    - I don't agree
+    - No, thank you
 
 - intent: agree
   examples: |
     - ok
+    - okay
     - correct
-    - yeah
     - uh yes
     - let's do it
     - yeah
@@ -70,6 +83,16 @@ nlu:
     - continue talking
     - go on with it
     - yes, continue
+    - don't stop
+    - don't pause
+    - resume
+    - press on
+    - proceed with the discussion
+    - don't halt
+    - persist
+    - keep it up
+    - carry forward
+    - don't break
 
 - intent: feeling
   examples: |
@@ -82,7 +105,17 @@ nlu:
     - All good
     - I'm doing well
     - Fine, thanks
-    - I'm well, how about you?
+    - Fantastic
+    - Great
+    - Wonderful
+    - Excellent
+    - Not too shabby
+    - Could be better
+    - So-so
+    - Meh
+    - Surviving
+    - Hanging in there
+    - Could not be better
 
 
 - intent: update
