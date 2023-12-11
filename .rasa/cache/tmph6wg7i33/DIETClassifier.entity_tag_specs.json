@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-brand",
+      "2": "I-brand",
+      "3": "L-brand",
+      "4": "U-brand",
+      "5": "B-budget",
+      "6": "I-budget",
+      "7": "L-budget",
+      "8": "U-budget",
+      "9": "B-carType",
+      "10": "I-carType",
+      "11": "L-carType",
+      "12": "U-carType",
+      "13": "B-engine",
+      "14": "I-engine",
+      "15": "L-engine",
+      "16": "U-engine",
+      "17": "B-origin",
+      "18": "I-origin",
+      "19": "L-origin",
+      "20": "U-origin",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-brand": 1,
+      "I-brand": 2,
+      "L-brand": 3,
+      "U-brand": 4,
+      "B-budget": 5,
+      "I-budget": 6,
+      "L-budget": 7,
+      "U-budget": 8,
+      "B-carType": 9,
+      "I-carType": 10,
+      "L-carType": 11,
+      "U-carType": 12,
+      "B-engine": 13,
+      "I-engine": 14,
+      "L-engine": 15,
+      "U-engine": 16,
+      "B-origin": 17,
+      "I-origin": 18,
+      "L-origin": 19,
+      "U-origin": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

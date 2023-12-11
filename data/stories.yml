@@ -48,7 +48,7 @@ stories:
 - story: budget_update
   steps:
   - intent: update
-  - action: utter_ask_budget
+  - action: utter_hidden_update
   - intent: input_budget
     entities:
     - budget: user_budget

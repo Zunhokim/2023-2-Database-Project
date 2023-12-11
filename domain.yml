@@ -13,6 +13,7 @@ actions:
   - utter_ask_brand
   - utter_ask_carType
   - utter_ask_engine
+  - utter_hidden_update
   - utter_help
 
 intents:
@@ -42,28 +43,28 @@ responses:
   - text: "Hello, I'm the car recommendation chatbot! How are you?"
 
   utter_ask_budget:
-  - text: "Oh, I see.\nHow much budget do you have?\nThe budget range will be automatically set within approximately 15% of the entered value."
+  - text: "Oh, I see.\n\nHow much budget do you have?\nThe budget range will be automatically set within approximately 15% of the entered value."
 
   utter_ask_origin:
   - text: "Where would you like the vehicle to be produced?\nProvide options : Domestic/Foreign"
 
   utter_ask_brand:
-  - text: "Which brand do you prefer? (Hyundai, Kia, Mercedes-Benz, Porsche, etc.)"
+  - text: "Which brand do you prefer? \n(Hyundai, Kia, Mercedes-Benz, Porsche, etc.)"
 
   utter_ask_carType:
-  - text: "What type of car do you prefer? (Sedan, Hatchback, SUV, Sports car, etc.)"
+  - text: "What type of car do you prefer? \n(Sedan, Hatchback, SUV, Sports car, etc.)"
 
   utter_ask_engine:
   - text: "What type of engine do you prefer?\nProvide options: Gasoline / Diesel / Hybrid / Electric"
-
-  utter_ask_update:
-  - text: "If you want to update your budget and try again, please enter \"update.\""
 
   utter_goodbye:
   - text: "Thank you for using chatbot.\nIf you want to shut down chatbot, please type \"/stop\""
 
   utter_help:
-  - text: "I am a car recommendation chatbot. Please follow the instructions and enter the values as guided. Only the budget area supports updates.\nIf you want to update the budget, simply input \"update.\"\nIf you want to start the bot from the beginning, just greet the bot!"
+  - text: "I am a car recommendation chatbot. Please follow the instructions and enter the values as guided.\n\nIf you want to start the bot from the beginning, just greet bot!"
+
+  utter_hidden_update:
+  - text: "You find hidden feature!\nNow you can update your budget, and the remaining conditions will be maintained.\n\nHow much budget do you have?"
 
 slots:
   user_budget:
