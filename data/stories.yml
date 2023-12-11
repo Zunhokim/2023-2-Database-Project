@@ -42,6 +42,9 @@ stories:
   - action: action_get_list_budgetOriginCartype
   - intent: agree
   - action: action_get_list_budgetOrigin
+
+- story: spare_recommendation_continue
+  steps:
   - intent: agree
   - action: action_get_list_Budget
 
