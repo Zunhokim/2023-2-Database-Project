@@ -208,7 +208,7 @@ class ActionGetCarListSpare2(Action):
             dispatcher.utter_message(text=car_list_text)
             dispatcher.utter_message(text=" \n \nShall I show you all the vehicles available within your budget range?\n")
         else:
-            dispatcher.utter_message(text="\n \nThere are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
+            dispatcher.utter_message(text=" \n \nThere are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
 
         return []
 
@@ -237,7 +237,7 @@ class ActionGetCarListSpare3(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price <= {global_budget} ORDER BY Manufacturer ASC, Price ASC, rand() limit 3"
+        query = f"SELECT * FROM Car WHERE Price <= {global_budget} ORDER BY Manufacturer ASC, Price ASC, rand() limit 7"
 
         # 쿼리 실행
         cursor.execute(query)

@@ -15,7 +15,7 @@ actions:
   - utter_ask_engine
   - utter_hidden_update
   - utter_help
-
+  
 intents:
   - greet
   - goodbye
@@ -65,6 +65,7 @@ responses:
 
   utter_hidden_update:
   - text: "You find hidden feature!\nNow you can update your budget, and the remaining conditions will be maintained.\n\nHow much budget do you have?"
+
 
 slots:
   user_budget:
