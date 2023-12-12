@@ -86,7 +86,7 @@ class ActionGetCarList(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text="\n \nWould you like a list based on budget range, distinguishing between domestic and foreign models, taking into consideration your preferred vehicle types?\nIf you want, type \"Continue\"")
+            dispatcher.utter_message(text="Would you like a list based on budget range, distinguishing between domestic and foreign models, taking into consideration your preferred vehicle types?\nIf you want, type \"Continue\"")
         else:
             dispatcher.utter_message(text="There are no vehicle fits the criteria.\nWould you like a list based on budget range, distinguishing between domestic and foreign models, taking into consideration your preferred vehicle types?\nIf you want, type \"Continue\"")
 
@@ -146,7 +146,7 @@ class ActionGetCarListSpare1(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text="\n \nWould you like recommendations for other vehicles that meet your budget and domestic/foreign criteria?")
+            dispatcher.utter_message(text="Would you like recommendations for other vehicles that meet your budget and domestic/foreign criteria?")
         else:
             dispatcher.utter_message(text="\n \nThere are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
 
@@ -237,7 +237,7 @@ class ActionGetCarListSpare3(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price <= {global_budget} ORDER BY Manufacturer ASC, Price ASC, rand() limit 7"
+        query = f"SELECT * FROM Car WHERE Price <= {global_budget} ORDER BY Manufacturer ASC, Price ASC, rand() limit 5"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -266,7 +266,7 @@ class ActionGetCarListSpare3(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text="\n \nAll service algorithms have been executed. If you'd like to start from the beginning, please enter \"hi\".")
+            dispatcher.utter_message(text="All service algorithms have been executed. If you'd like to start from the beginning, please enter \"hi\".\n")
         else:
             dispatcher.utter_message(text="\n \nPlease check to ensure that the budget is not insufficient.\n")
 
