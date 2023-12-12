@@ -1,9 +1,0 @@
-{
-  "lookup": {
-    "eJyLrq6NBQAEOAGx": "action_listen",
-    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taS2NhYA6dwbhQ==": "utter_greet",
-    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpbhMiAUAQvc0lw==": "action_listen",
-    "eJydjkEKwzAMBL+iB4SSXv0VY0zaiiBIlWCvezH+e1WcUOilkJsWZmflaxuobolfcbpDVnVU+xF1erKjPSySwWpsyZyMEbUIR3NiRvvjKACn2NFzht8v8rIiG/RxxVt5zGwmf72M4TtgdoGwYb4TYaBjVHQr2IuthTf0JGKp": "action_get_car_list",
-    "eJytjtEKwjAMRX8lHzBEX/srpZQ6wwhs2UhTX8r+3bhOBF8m4lsunJx7fV07qIvgPaZeaWYHtR2R04QO9jBSVmRjS0YxhtiiOhgEUdcDR1FFiQ39zfC5Io+zZoOerngttwHN5C+nc3gXmJ2U0DDfiNDBq5R4Kbo/ftltZOyTbBv+viA8AHKakxw=": "action_listen"
-  }
-}
