@@ -126,9 +126,7 @@ class ActionGetCarListSpare1(Action):
         car_list = []
 
         # 각 차량 정보를 리스트에 추가  (최대 5개)       
-        result_set = cursor.fetchall()
-        random_sample = random.sample(result_set, min(len(result_set), 5))
-        for row in random_sample:
+        for row in cursor.fetchall():
             car_id = row[0]
             manufacturer = row[1]
             origin = row[2]
@@ -140,7 +138,6 @@ class ActionGetCarListSpare1(Action):
             car_info = "Brand: {:15s} | Origin: {:15s} | Model Name: {:20s} | Car Type: {:15s} | Price: {:15s} | Fuel Type: {:15s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
             car_list.append(car_info)
 
-
         # 커넥션 및 커서 닫기
         cursor.close()
         conn.close()
@@ -151,7 +148,7 @@ class ActionGetCarListSpare1(Action):
             dispatcher.utter_message(text=car_list_text)
             dispatcher.utter_message(text="\n \nWould you like recommendations for other vehicles that meet your budget and domestic/foreign criteria?")
         else:
-            dispatcher.utter_message(text="There are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
+            dispatcher.utter_message(text="\n \nThere are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
 
         return []
 
@@ -180,7 +177,7 @@ class ActionGetCarListSpare2(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin LIKE '%{global_origin}%' ORDER BY Manufacturer ASC, Price ASC"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin LIKE '%{global_origin}%' ORDER BY Manufacturer ASC, Price ASC, "
 
         # 쿼리 실행
         cursor.execute(query)
@@ -189,9 +186,7 @@ class ActionGetCarListSpare2(Action):
         car_list = []
 
         # 각 차량 정보를 리스트에 추가 (최대 7개)
-        result_set = cursor.fetchall()
-        random_sample = random.sample(result_set, min(len(result_set), 7))
-        for row in random_sample:
+        for row in cursor.fetchall():
             car_id = row[0]
             manufacturer = row[1]
             origin = row[2]
@@ -203,7 +198,6 @@ class ActionGetCarListSpare2(Action):
             car_info = "Brand: {:15s} | Origin: {:15s} | Model Name: {:20s} | Car Type: {:15s} | Price: {:15s} | Fuel Type: {:15s}".format(manufacturer, origin, model_name, CarType, price, FuelType)
             car_list.append(car_info)
 
-
         # 커넥션 및 커서 닫기
         cursor.close()
         conn.close()
@@ -212,9 +206,9 @@ class ActionGetCarListSpare2(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text="\n \nShall I show you all the vehicles available within your budget range?")
+            dispatcher.utter_message(text=" \n \nShall I show you all the vehicles available within your budget range?\n")
         else:
-            dispatcher.utter_message(text="There are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
+            dispatcher.utter_message(text="\n \nThere are no vehicle fits the criteria.\nShall I recommend vehicles within your budget, even if they do not meet all the criteria?")
 
         return []
 
@@ -252,9 +246,7 @@ class ActionGetCarListSpare3(Action):
         car_list = []
 
         # 각 차량 정보를 리스트에 추가 (최대 10개 항목)
-        result_set = cursor.fetchall()
-        random_sample = random.sample(result_set, min(len(result_set), 10))
-        for row in random_sample:
+        for row in cursor.fetchall():
             car_id = row[0]
             manufacturer = row[1]
             origin = row[2]
@@ -274,7 +266,7 @@ class ActionGetCarListSpare3(Action):
         if car_list:
             car_list_text = "\n".join(car_list)
             dispatcher.utter_message(text=car_list_text)
-            dispatcher.utter_message(text="_\nAll service algorithms have been executed. If you'd like to start from the beginning, please enter \"hi\".")
+            dispatcher.utter_message(text="\n \nAll service algorithms have been executed. If you'd like to start from the beginning, please enter \"hi\".")
         else:
             dispatcher.utter_message(text="\n \nPlease check to ensure that the budget is not insufficient.\n")
 
