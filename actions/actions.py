@@ -3,7 +3,6 @@ from rasa_sdk.executor import CollectingDispatcher
 from typing import Any, Dict, List, Text
 from rasa_sdk.events import SlotSet
 import mysql.connector
-import random
 
 class SaveSlotValuesAction(Action):
     def name(self) -> Text:
