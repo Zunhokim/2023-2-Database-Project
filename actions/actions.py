@@ -56,7 +56,7 @@ class ActionGetCarList(Action):
 
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
-
+        
         query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin LIKE '%{global_origin}%' AND Manufacturer LIKE '%{global_brand}%' AND CarType LIKE '%{global_carType}%' AND FuelType LIKE '%{global_engine}%' ORDER BY Manufacturer ASC, Price ASC"
 
         # 쿼리 실행
@@ -117,7 +117,7 @@ class ActionGetCarListSpare1(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin LIKE '%{global_origin}%' AND CarType LIKE '%{global_carType}%' ORDER BY Manufacturer ASC, Price ASC"
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin LIKE '%{global_origin}%' AND CarType LIKE '%{global_carType}%' ORDER BY Manufacturer ASC, Price ASC, rand() limit 3"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -177,7 +177,7 @@ class ActionGetCarListSpare2(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin LIKE '%{global_origin}%' ORDER BY Manufacturer ASC, Price ASC, "
+        query = f"SELECT * FROM Car WHERE Price >= {global_lower_bound} AND Price <= {global_upper_bound} AND Origin LIKE '%{global_origin}%' ORDER BY Manufacturer ASC, Price ASC, rand() limit 5"
 
         # 쿼리 실행
         cursor.execute(query)
@@ -237,7 +237,7 @@ class ActionGetCarListSpare3(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price <= {global_budget} ORDER BY Manufacturer ASC, Price ASC"
+        query = f"SELECT * FROM Car WHERE Price <= {global_budget} ORDER BY Manufacturer ASC, Price ASC, rand() limit 3"
 
         # 쿼리 실행
         cursor.execute(query)
