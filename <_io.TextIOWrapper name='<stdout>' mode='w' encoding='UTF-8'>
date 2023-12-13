@@ -811,3 +811,17 @@ Brand: Hyundai         | Origin: Domestic        | Model Name: Avante           
 Brand: Hyundai         | Origin: Domestic        | Model Name: Ioniq Hybrid         | Car Type: Hatchback       | Price: 28000000        | Fuel Type: Hybrid         
 Brand: Hyundai         | Origin: Domestic        | Model Name: Sonata               | Car Type: Sedan           | Price: 32000000        | Fuel Type: Gasoline       
 Brand: Hyundai         | Origin: Domestic        | Model Name: Veloster             | Car Type: Sports Car      | Price: 33000000        | Fuel Type: Gasoline[0m
+[94mBrand: Genesis         | Origin: Domestic        | Model Name: G70                  | Car Type: Sedan           | Price: 45000000        | Fuel Type: Gasoline       
+Brand: Chevrolet       | Origin: Foreign         | Model Name: Equinox              | Car Type: SUV             | Price: 45000000        | Fuel Type: Gasoline       
+Brand: Hyundai         | Origin: Domestic        | Model Name: Palisade             | Car Type: SUV             | Price: 45000000        | Fuel Type: Gasoline       
+Brand: Hyundai         | Origin: Domestic        | Model Name: Kona Electric        | Car Type: SUV             | Price: 45000000        | Fuel Type: Electric       
+Brand: SsangYong       | Origin: Domestic        | Model Name: Korando Hybrid       | Car Type: SUV             | Price: 40000000        | Fuel Type: Hybrid         
+Brand: Kia             | Origin: Domestic        | Model Name: Sorento              | Car Type: SUV             | Price: 40000000        | Fuel Type: Gasoline       
+Brand: SsangYong       | Origin: Domestic        | Model Name: Rexton               | Car Type: SUV             | Price: 40000000        | Fuel Type: Diesel[0m
+[94mBrand: Lamborghini     | Origin: Foreign         | Model Name: Aventador            | Car Type: Sports Car      | Price: 570000000       | Fuel Type: Gasoline       
+Brand: Ferrari         | Origin: Foreign         | Model Name: 488 Pista            | Car Type: SUV             | Price: 440000000       | Fuel Type: Gasoline       
+Brand: Mercedes-Benz   | Origin: Foreign         | Model Name: AMG GT 63            | Car Type: Sedan           | Price: 250000000       | Fuel Type: Gasoline       
+Brand: Porsche         | Origin: Foreign         | Model Name: 911                  | Car Type: Sports Car      | Price: 150000000       | Fuel Type: Gasoline       
+Brand: BMW             | Origin: Foreign         | Model Name: M4                   | Car Type: Sports Car      | Price: 140000000       | Fuel Type: Gasoline       
+Brand: Porsche         | Origin: Foreign         | Model Name: Cayenne              | Car Type: SUV             | Price: 130000000       | Fuel Type: Gasoline       
+Brand: Mercedes-Benz   | Origin: Foreign         | Model Name: EQC                  | Car Type: SUV             | Price: 120000000       | Fuel Type: Electric[0m

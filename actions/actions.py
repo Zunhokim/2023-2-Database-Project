@@ -236,7 +236,7 @@ class ActionGetCarListSpare3(Action):
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
 
-        query = f"SELECT * FROM Car WHERE Price <= {global_budget} ORDER BY Price DESC limit 5"
+        query = f"SELECT * FROM Car WHERE Price <= {global_budget} ORDER BY Price DESC limit 7"
 
         # 쿼리 실행
         cursor.execute(query)
