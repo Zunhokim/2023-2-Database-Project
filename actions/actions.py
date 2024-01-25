@@ -47,7 +47,7 @@ class ActionGetCarList(Action):
         # MySQL 데이터베이스 연결 설정
         db_config = {
             'user': 'root',
-            'password': 'porsche-718',
+            'password': '',
             'host': 'localhost',
             'port': '3306',
             'database': 'cardb'
@@ -107,7 +107,7 @@ class ActionGetCarListSpare1(Action):
         # MySQL 데이터베이스 연결 설정
         db_config = {
             'user': 'root',
-            'password': 'porsche-718',
+            'password': '',
             'host': 'localhost',
             'port': '3306',
             'database': 'cardb'
@@ -167,7 +167,7 @@ class ActionGetCarListSpare2(Action):
         # MySQL 데이터베이스 연결 설정
         db_config = {
             'user': 'root',
-            'password': 'porsche-718',
+            'password': '',
             'host': 'localhost',
             'port': '3306',
             'database': 'cardb'
@@ -227,7 +227,7 @@ class ActionGetCarListSpare3(Action):
         # MySQL 데이터베이스 연결 설정
         db_config = {
             'user': 'root',
-            'password': 'porsche-718',
+            'password': '',
             'host': 'localhost',
             'port': '3306',
             'database': 'cardb'
